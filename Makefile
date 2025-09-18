@@ -1,12 +1,13 @@
-PROTOS  := proto/*.proto
+PROTOS  := proto/tasks/*.proto proto/users/*.proto
 OUT_DIR := .
 
 generate:
-	protoc \
+	./bin/protoc.exe \
 	  --go_out=$(OUT_DIR) --go_opt=paths=source_relative \
 	  --go-grpc_out=$(OUT_DIR) --go-grpc_opt=paths=source_relative \
 	  --plugin=protoc-gen-go=C:\Users\vladimir.kireev\go\bin\protoc-gen-go.exe \
 	  --plugin=protoc-gen-go-grpc=C:\Users\vladimir.kireev\go\bin\protoc-gen-go-grpc.exe \
+	  --proto_path=proto \
 	  $(PROTOS)
 
 clean:
