@@ -473,7 +473,7 @@ const file_tasks_task_proto_rawDesc = "" +
 	"\n" +
 	"UpdateTask\x12\x17.task.UpdateTaskRequest\x1a\x18.task.UpdateTaskResponse\x12?\n" +
 	"\n" +
-	"DeleteTask\x12\x17.task.DeleteTaskRequest\x1a\x18.task.DeleteTaskResponseB0Z.github.com/your-org/project-protos/proto/tasksb\x06proto3"
+	"DeleteTask\x12\x17.task.DeleteTaskRequest\x1a\x18.task.DeleteTaskResponseB0Z.github.com/valdevay/project-protos/proto/tasksb\x06proto3"
 
 var (
 	file_tasks_task_proto_rawDescOnce sync.Once
