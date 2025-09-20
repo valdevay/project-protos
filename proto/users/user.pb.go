@@ -394,7 +394,6 @@ func (x *DeleteUserRequest) GetId() uint32 {
 type DeleteUserResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
-	Id            uint32                 `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -434,13 +433,6 @@ func (x *DeleteUserResponse) GetSuccess() bool {
 		return x.Success
 	}
 	return false
-}
-
-func (x *DeleteUserResponse) GetId() uint32 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
 }
 
 type GetUserRequest struct {
@@ -557,10 +549,9 @@ const file_users_user_proto_rawDesc = "" +
 	"\x04user\x18\x01 \x01(\v2\n" +
 	".user.UserR\x04user\"#\n" +
 	"\x11DeleteUserRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\rR\x02id\">\n" +
+	"\x02id\x18\x01 \x01(\rR\x02id\".\n" +
 	"\x12DeleteUserResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x0e\n" +
-	"\x02id\x18\x02 \x01(\rR\x02id\" \n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\" \n" +
 	"\x0eGetUserRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\"1\n" +
 	"\x0fGetUserResponse\x12\x1e\n" +
