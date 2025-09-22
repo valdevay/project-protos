@@ -600,7 +600,7 @@ const file_tasks_task_proto_rawDesc = "" +
 	"\x11DeleteTaskRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\"$\n" +
 	"\x12DeleteTaskResponse\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\rR\x02id2\x81\x03\n" +
+	"\x02id\x18\x01 \x01(\rR\x02id2\xe6\x02\n" +
 	"\vTaskService\x12?\n" +
 	"\n" +
 	"CreateTask\x12\x17.task.CreateTaskRequest\x1a\x18.task.CreateTaskResponse\x12!\n" +
@@ -608,9 +608,11 @@ const file_tasks_task_proto_rawDesc = "" +
 	".task.Task\x1a\n" +
 	".task.Task\x12<\n" +
 	"\tListTasks\x12\x16.task.ListTasksRequest\x1a\x17.task.ListTasksResponse\x12N\n" +
-	"\x0fListTasksByUser\x12\x1c.task.ListTasksByUserRequest\x1a\x1d.task.ListTasksByUserResponse\x12?\n" +
+	"\x0fListTasksByUser\x12\x1c.task.ListTasksByUserRequest\x1a\x1d.task.ListTasksByUserResponse\x12$\n" +
 	"\n" +
-	"UpdateTask\x12\x17.task.UpdateTaskRequest\x1a\x18.task.UpdateTaskResponse\x12?\n" +
+	"UpdateTask\x12\n" +
+	".task.Task\x1a\n" +
+	".task.Task\x12?\n" +
 	"\n" +
 	"DeleteTask\x12\x17.task.DeleteTaskRequest\x1a\x18.task.DeleteTaskResponseB0Z.github.com/valdevay/project-protos/proto/tasksb\x06proto3"
 
@@ -650,13 +652,13 @@ var file_tasks_task_proto_depIdxs = []int32{
 	0,  // 6: task.TaskService.GetTask:input_type -> task.Task
 	3,  // 7: task.TaskService.ListTasks:input_type -> task.ListTasksRequest
 	5,  // 8: task.TaskService.ListTasksByUser:input_type -> task.ListTasksByUserRequest
-	7,  // 9: task.TaskService.UpdateTask:input_type -> task.UpdateTaskRequest
+	0,  // 9: task.TaskService.UpdateTask:input_type -> task.Task
 	9,  // 10: task.TaskService.DeleteTask:input_type -> task.DeleteTaskRequest
 	2,  // 11: task.TaskService.CreateTask:output_type -> task.CreateTaskResponse
 	0,  // 12: task.TaskService.GetTask:output_type -> task.Task
 	4,  // 13: task.TaskService.ListTasks:output_type -> task.ListTasksResponse
 	6,  // 14: task.TaskService.ListTasksByUser:output_type -> task.ListTasksByUserResponse
-	8,  // 15: task.TaskService.UpdateTask:output_type -> task.UpdateTaskResponse
+	0,  // 15: task.TaskService.UpdateTask:output_type -> task.Task
 	10, // 16: task.TaskService.DeleteTask:output_type -> task.DeleteTaskResponse
 	11, // [11:17] is the sub-list for method output_type
 	5,  // [5:11] is the sub-list for method input_type
