@@ -26,8 +26,8 @@ type Task struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
-	IsDone        bool                   `protobuf:"varint,3,opt,name=is_done,json=isDone,proto3" json:"is_done,omitempty"`
-	UserId        uint32                 `protobuf:"varint,4,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	IsDone        bool                   `protobuf:"varint,3,opt,name=isDone,proto3" json:"isDone,omitempty"`
+	UserId        uint32                 `protobuf:"varint,4,opt,name=userId,proto3" json:"userId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -93,7 +93,7 @@ func (x *Task) GetUserId() uint32 {
 type CreateTaskRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
-	UserId        uint32                 `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserId        uint32                 `protobuf:"varint,2,opt,name=userId,proto3" json:"userId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -284,7 +284,7 @@ func (x *ListTasksResponse) GetTasks() []*Task {
 
 type ListTasksByUserRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        uint32                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserId        uint32                 `protobuf:"varint,1,opt,name=userId,proto3" json:"userId,omitempty"`
 	Limit         uint32                 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        uint32                 `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -566,15 +566,15 @@ var File_tasks_task_proto protoreflect.FileDescriptor
 
 const file_tasks_task_proto_rawDesc = "" +
 	"\n" +
-	"\x10tasks/task.proto\x12\x04task\"^\n" +
+	"\x10tasks/task.proto\x12\x04task\"\\\n" +
 	"\x04Task\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x14\n" +
-	"\x05title\x18\x02 \x01(\tR\x05title\x12\x17\n" +
-	"\ais_done\x18\x03 \x01(\bR\x06isDone\x12\x17\n" +
-	"\auser_id\x18\x04 \x01(\rR\x06userId\"B\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x16\n" +
+	"\x06isDone\x18\x03 \x01(\bR\x06isDone\x12\x16\n" +
+	"\x06userId\x18\x04 \x01(\rR\x06userId\"A\n" +
 	"\x11CreateTaskRequest\x12\x14\n" +
-	"\x05title\x18\x01 \x01(\tR\x05title\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\rR\x06userId\"4\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12\x16\n" +
+	"\x06userId\x18\x02 \x01(\rR\x06userId\"4\n" +
 	"\x12CreateTaskResponse\x12\x1e\n" +
 	"\x04task\x18\x01 \x01(\v2\n" +
 	".task.TaskR\x04task\"@\n" +
@@ -583,9 +583,9 @@ const file_tasks_task_proto_rawDesc = "" +
 	"\x06offset\x18\x02 \x01(\rR\x06offset\"5\n" +
 	"\x11ListTasksResponse\x12 \n" +
 	"\x05tasks\x18\x01 \x03(\v2\n" +
-	".task.TaskR\x05tasks\"_\n" +
-	"\x16ListTasksByUserRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\rR\x06userId\x12\x14\n" +
+	".task.TaskR\x05tasks\"^\n" +
+	"\x16ListTasksByUserRequest\x12\x16\n" +
+	"\x06userId\x18\x01 \x01(\rR\x06userId\x12\x14\n" +
 	"\x05limit\x18\x02 \x01(\rR\x05limit\x12\x16\n" +
 	"\x06offset\x18\x03 \x01(\rR\x06offset\";\n" +
 	"\x17ListTasksByUserResponse\x12 \n" +
