@@ -6,10 +6,13 @@ option go_package = "github.com/valdevay/project-protos/proto/tasks";
 message Task {
   uint32 id      = 1;
   string title   = 2;
+  bool is_done   = 3;
+  uint32 user_id = 4;
 }
 
 message CreateTaskRequest {
   string title = 1;
+  uint32 user_id = 2;
 }
 message CreateTaskResponse {
   Task task = 1;
@@ -20,6 +23,15 @@ message ListTasksRequest {
   uint32 offset = 2;
 }
 message ListTasksResponse {
+  repeated Task tasks = 1;
+}
+
+message ListTasksByUserRequest {
+  uint32 user_id = 1;
+  uint32 limit = 2;
+  uint32 offset = 3;
+}
+message ListTasksByUserResponse {
   repeated Task tasks = 1;
 }
 
@@ -41,6 +53,7 @@ service TaskService {
   rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse);
   rpc GetTask    (Task)             returns (Task);
   rpc ListTasks  (ListTasksRequest) returns (ListTasksResponse);
+  rpc ListTasksByUser (ListTasksByUserRequest) returns (ListTasksByUserResponse);
   rpc UpdateTask (UpdateTaskRequest) returns (UpdateTaskResponse);
   rpc DeleteTask (DeleteTaskRequest) returns (DeleteTaskResponse);
 }
