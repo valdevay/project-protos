@@ -36,13 +36,6 @@ message ListTasksByUserResponse {
   repeated Task tasks = 1;
 }
 
-message UpdateTaskRequest {
-  uint32 id = 1;
-  string title = 2;
-  bool isDone = 3;
-  uint32 userId = 4;
-}
-
 message UpdateTaskResponse {
   Task task = 1;
 }
@@ -59,6 +52,6 @@ service TaskService {
   rpc GetTask    (Task)             returns (Task);
   rpc ListTasks  (ListTasksRequest) returns (ListTasksResponse);
   rpc ListTasksByUser (ListTasksByUserRequest) returns (ListTasksByUserResponse);
-  rpc UpdateTask(Task) returns (Task);
+  rpc UpdateTask(Task) returns (UpdateTaskResponse);
   rpc DeleteTask (DeleteTaskRequest) returns (DeleteTaskResponse);
 }
